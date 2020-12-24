@@ -10,9 +10,9 @@ const projectPath = 'node_modules/@umaqgeek/mywebmin';
 const PATHS = {
     app: path.join(__dirname, parentPath+'/src'),
     images:path.join(__dirname,'src/assets/'),
-    build: path.join(__dirname, parentPath+'/dist')
+    build: path.join(__dirname, parentPath+'/')
   };
-  var baseHref = process.env.WP_BASE_HREF ? process.env.WP_BASE_HREF : '/';
+  var baseHref = '/public/'; //process.env.WP_BASE_HREF ? process.env.WP_BASE_HREF : '/';
     module.exports = {
              entry: path.join(__dirname, parentPath+"/src/index.js"),
             module: 
@@ -52,7 +52,7 @@ const PATHS = {
                     ]
                 },
                 plugins: [
-                        new extractTextPlugin('[name].css'),
+                        new extractTextPlugin('src/assets/externals/css/[name].css'),
                         new HtmlWebpackPlugin({
                             template: projectPath+'/src/index.html',
                             baseUrl: baseHref
@@ -61,7 +61,7 @@ const PATHS = {
                             patterns: [
                                 {
                                     from:projectPath+'/src/assets',
-                                    to:'src/assets'
+                                    to:'src/assets/externals'
                                 } 
                             ]
                         }),		   							
