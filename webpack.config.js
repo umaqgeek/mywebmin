@@ -4,14 +4,17 @@ var path = require('path');
 const webpack = require('webpack');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 
+const parentPath = '../../..';
+const projectPath = 'node_modules/@umaqgeek/mywebmin';
+
 const PATHS = {
-    app: path.join(__dirname, 'src'),
+    app: path.join(__dirname, parentPath+'/src'),
     images:path.join(__dirname,'src/assets/'),
-    build: path.join(__dirname, 'dist')
+    build: path.join(__dirname, parentPath+'/dist')
   };
   var baseHref = process.env.WP_BASE_HREF ? process.env.WP_BASE_HREF : '/';
     module.exports = {
-             entry: path.join(__dirname, "/src/index.js"),
+             entry: path.join(__dirname, parentPath+"/src/index.js"),
             module: 
                 {
                     rules:[ 
@@ -51,14 +54,14 @@ const PATHS = {
                 plugins: [
                         new extractTextPlugin('[name].css'),
                         new HtmlWebpackPlugin({
-                            template: 'src/index.html',
+                            template: projectPath+'/src/index.html',
                             baseUrl: baseHref
                         }),
                         new CopyWebpackPlugin({
                             patterns: [
                                 {
-                                    from:'src/assets',
-                                    to:'assets'
+                                    from:projectPath+'/src/assets',
+                                    to:'src/assets'
                                 } 
                             ]
                         }),		   							
