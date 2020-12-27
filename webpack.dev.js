@@ -10,7 +10,7 @@ module.exports = webpackMerge(commonConfig, {
     devtool: 'eval',
     
     output: {
-        path: path.join(process.cwd(), '/dist'),
+        path: path.join(process.cwd(), '/public'),
         publicPath: 'http://localhost:8080/',
         filename: 'index_bundle.js'
     },
