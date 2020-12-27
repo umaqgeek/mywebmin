@@ -4,17 +4,14 @@ var path = require('path');
 const webpack = require('webpack');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 
-const parentPath = '../../..';
-const projectPath = 'node_modules/@umaqgeek/mywebmin';
-
 const PATHS = {
-    app: path.join(__dirname, parentPath+'/src'),
+    app: path.join(__dirname, 'src'),
     images:path.join(__dirname,'src/assets/'),
-    build: path.join(__dirname, parentPath+'/')
+    build: path.join(__dirname, 'dist')
   };
-  var baseHref = '/public/'; //process.env.WP_BASE_HREF ? process.env.WP_BASE_HREF : '/';
+  var baseHref = process.env.WP_BASE_HREF ? process.env.WP_BASE_HREF : '/';
     module.exports = {
-             entry: path.join(__dirname, parentPath+"/src/index.js"),
+             entry: path.join(__dirname, "/src/index.js"),
             module: 
                 {
                     rules:[ 
@@ -52,17 +49,17 @@ const PATHS = {
                     ]
                 },
                 plugins: [
-                        new extractTextPlugin('src/assets/externals/css/[name].css'),
+                        new extractTextPlugin('[name].css'),
                         new HtmlWebpackPlugin({
-                            template: projectPath+'/src/index.html',
+                            template: 'src/index.html',
                             baseUrl: baseHref
                         }),
                         new CopyWebpackPlugin({
                             patterns: [
                                 {
-                                    from:projectPath+'/src/assets',
-                                    to:'src/assets/externals'
-                                }
+                                    from:'src/assets',
+                                    to:'assets'
+                                } 
                             ]
                         }),		   							
                         new webpack.ProvidePlugin({

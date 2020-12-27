@@ -11,9 +11,9 @@ module.exports = webpackMerge(commonConfig, {
    //  devtool: 'source-map',
     mode: 'production',
     output: {
-        path: path.join(process.cwd(), '/'),
+        path: path.join(process.cwd(), '/public'),
         publicPath: '#',
-        filename: 'public/index_bundle.js'
+        filename: 'index_bundle.js'
     },
    
     optimization: {
@@ -30,7 +30,7 @@ module.exports = webpackMerge(commonConfig, {
     },
     plugins: [
         new webpack.NoEmitOnErrorsPlugin(),
-        new ExtractTextPlugin('public/[name].css'),
+        new ExtractTextPlugin('[name].css'),
         new OptimizeCssAssetsPlugin({
             cssProcessor: require('cssnano'),
             cssProcessorOptions: {
