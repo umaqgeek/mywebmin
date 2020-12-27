@@ -5,7 +5,7 @@ import '!style-loader!css-loader!bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/jquery/dist/jquery.js';
 
 //Reactstrap Js
-import './externals/assets/js/reactstrap.min.js';
+import './assets/js/reactstrap.min.js';
 
 //React Date Picker
 import '!style-loader!css-loader!react-datepicker/dist/react-datepicker.css';
@@ -20,7 +20,7 @@ import '!style-loader!css-loader!react-accessible-accordion/dist/fancy-example.c
 import  "!style-loader!css-loader!../node_modules/react-big-calendar/lib/css/react-big-calendar.css";
 
 //Themify Icon Css
-import './externals/assets/themify-icons/themify-icons.css';
+import './assets/themify-icons/themify-icons.css';
 
 //Themify Icon Css
-import './externals/assets/js/custom.js';
+import './assets/js/custom.js';
