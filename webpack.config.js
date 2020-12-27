@@ -62,7 +62,7 @@ const PATHS = {
                                 {
                                     from:projectPath+'/src/assets',
                                     to:'src/assets/externals'
-                                } 
+                                }
                             ]
                         }),		   							
                         new webpack.ProvidePlugin({
