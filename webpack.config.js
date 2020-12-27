@@ -51,7 +51,7 @@ const PATHS = {
                 plugins: [
                         new extractTextPlugin('[name].css'),
                         new HtmlWebpackPlugin({
-                            template: 'src/index.html',
+                            template: 'public/index.html',
                             baseUrl: baseHref
                         }),
                         new CopyWebpackPlugin({
