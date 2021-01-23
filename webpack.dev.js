@@ -11,7 +11,7 @@ module.exports = webpackMerge(commonConfig, {
     
     output: {
         path: path.join(process.cwd(), '/public'),
-        publicPath: 'http://localhost:8080/',
+        publicPath: '/',
         filename: 'index_bundle.js'
     },
 
@@ -24,6 +24,7 @@ module.exports = webpackMerge(commonConfig, {
         historyApiFallback: true,
         stats: 'minimal',
         inline: true,
-        hot:true
+        hot: true,
+        port: process.env.PORT || 3000
     }
 });
